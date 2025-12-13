@@ -1,5 +1,21 @@
 {
     "python-envs.defaultEnvManager": "ms-python.python:conda",
     "python-envs.defaultPackageManager": "ms-python.python:conda",
-    "python-envs.pythonProjects": []
+    "python-envs.pythonProjects": [],
+        // 这里是为了创建一个专门启动特定Conda环境的终端配置
+    "terminal.integrated.profiles.windows": {
+        "CondaTerm": {
+            "source": "PowerShell",
+            "args": [
+                "-NoExit",
+                "-Command",
+                "conda activate msquant" 
+            ],
+            "icon": "terminal-powershell"
+        }
+    },
+    // 将这个配置设为当前项目的默认终端
+    "terminal.integrated.defaultProfile.windows": "CondaTerm"
+    
+
 }
